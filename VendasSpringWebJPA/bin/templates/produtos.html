@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>
+    </head>
+    <body>
+<table>
+<tr>
+<th>Produtos</th>
+<th>Preço</th>
+</tr>
+<tr th:each="pr : ${pr}">
+<td th:text="${pr.nome}"></td>
+<td th:text="${pr.preco}"></td>
+</tr>
+</table>
+    </body>
+</html>
