@@ -17,17 +17,32 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+.glyphicon {
+    font-size: 40px;
+    text-align:center;
+ margin-right: auto;
+ 
+}
+
+</style>
 </head>
 <body>
 <h1 th:inline="text" class="text-center">Olá [[${#httpServletRequest.remoteUser}]]!</h1>
-	<table class="table-striped table-bordered table">
+
+<button type="button" class="btn btn-primary center-block">Adicionar Produto</button>
+	<table class="table-striped table-bordered table" style="margin-top:15px;">
 		<tr>
 			<th>Produtos</th>
 			<th>Preço</th>
+			<th>Ações</th>
 		</tr>
 		<tr th:each="pr : ${pr}">
 			<td th:text="${pr.nome}"></td>
 			<td th:text="${pr.preco}"></td>
+			<td><span class="glyphicon glyphicon-edit" style="color:#28ed59;"></span>
+			<span class="glyphicon glyphicon-remove" style="color:red;"></span>
+			</td>
 		</tr>
 	</table>
 	        <form th:action="@{/logout}" method="post">

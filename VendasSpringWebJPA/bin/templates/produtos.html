@@ -22,10 +22,14 @@
 		<tr>
 			<th>Produtos</th>
 			<th>Preço</th>
+			<th>Ações</th>
 		</tr>
 		<tr th:each="pr : ${pr}">
 			<td th:text="${pr.nome}"></td>
 			<td th:text="${pr.preco}"></td>
+			<td><span class="glyphicon glyphicon-edit" style="color:yellow"></span>
+			<span class="glyphicon glyphicon-remove" style="color:red"></span>
+			</td>
 		</tr>
 	</table>
 </body>
