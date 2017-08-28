@@ -29,7 +29,7 @@ public class VendasController {
 		this.vr = vr;
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/hello")
 	public String consultarProdutos(Model model) {
 		
 		model.addAttribute("pr",pr.findAll());
