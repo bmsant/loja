@@ -30,7 +30,7 @@
 <body>
 <h1 th:inline="text" class="text-center">Olá [[${#httpServletRequest.remoteUser}]]!</h1>
 
-<button type="button" class="btn btn-primary center-block">Adicionar Produto</button>
+<a href="/produto" class="btn btn-primary">Adicionar Produto</a>
 	<table class="table-striped table-bordered table" style="margin-top:15px;">
 		<tr>
 			<th>Produtos</th>
@@ -40,8 +40,8 @@
 		<tr th:each="pr : ${pr}">
 			<td th:text="${pr.nome}"></td>
 			<td th:text="${pr.preco}"></td>
-			<td><span class="glyphicon glyphicon-edit" style="color:#28ed59;"></span>
-			<span class="glyphicon glyphicon-remove" style="color:red;"></span>
+			<td><a th:href="'/produto?id=' + ${pr.id}"><span class="glyphicon glyphicon-edit" style="color:#28ed59;"></span></a>
+			<a th:href="'/deletaProduto?id=' + ${pr.id}"><span class="glyphicon glyphicon-remove" style="color:red;"></span></a>
 			</td>
 		</tr>
 	</table>
